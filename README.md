@@ -49,7 +49,7 @@ IMDB-data-analysis/
 1. **Clone the repository**
 
    ```bash
-   https://github.com/not-right-now/IMDB-data-analysis.git
+   git clone https://github.com/not-right-now/IMDB-data-analysis.git
    cd IMDB-data-analysis
    ```
 
