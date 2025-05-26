@@ -49,8 +49,8 @@ IMDB-data-analysis/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/imdb-data-analysis.git
-   cd imdb-data-analysis
+   https://github.com/not-right-now/IMDB-data-analysis.git
+   cd IMDB-data-analysis
    ```
 
 2. **Create & activate a virtual environment** (recommended)
