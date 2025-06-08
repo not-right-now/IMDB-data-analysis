@@ -1,110 +1,104 @@
-# IMDb Data Analysis
+# 📊 IMDb Data Analysis & Interactive Visualization
 
-A Python-based CLI tool for analyzing and visualizing the IMDb Top 1000 movies dataset. This project cleans and enriches the data, extracts key features, computes summary statistics, and generates a series of insightful plots.
+*An interactive exploration of the top 1000 movies, brought to life with Python and Plotly.*
 
-## Repository Structure
+This project offers an interactive exploration of the IMDb Top 1000 movies dataset. It cleans the data, derives key insights, and generates a series of **interactive visualizations** to tell a story about the best movies of all time.
+
+## 🚀 Project Highlights
+
+* **Interactive Charts**: Instead of static images, the project generates interactive HTML plots using Plotly. You can hover for details, zoom, and pan!
+* **Data Storytelling**: The visualizations are designed to present a clear narrative about movie trends over time, genre popularity, and what makes a film successful.
+* **Robust Scripting**: The Python script is designed to be user-friendly, with clear logging, error handling, and argument parsing.
+
+## 📂 Repository Structure
 
 ```
 IMDB-data-analysis/
 ├── data/
-│   └── imdb_top_1000.csv       # Raw IMDb dataset (Top 1000 movies)
-├── IMDB_data_analysis.py       # Main analysis & visualization script
+│   └── imdb_top_1000.csv       # Raw IMDb dataset
 ├── visualizations/             # Output folder for generated plots
-│   ├── correlation.png
-│   ├── genre_popularity.png
-│   ├── rating_trend.png
-│   └── top_directors.png
+│   ├── 1_rating_trend.html
+│   ├── 2_genre_popularity.html
+│   ├── 3_feature_correlation.html
+│   ├── 4_top_directors.html
+│   └── 5_rating_vs_gross.html
+├── IMDB_data_analysis.py       # Main analysis & visualization script
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Project documentation (this file)
 ```
 
-## Features
+## 📊 The Visualizations: A Data Story
 
-* **Robust CSV handling**: Verifies file existence and prompts for correct path.
-* **Missing value management**: Fills or drops nulls for critical fields.
-* **Feature engineering**: Parses runtime, counts genres, extracts decade bins, and one-hot encodes certificates.
-* **Outlier filtering**: Caps gross revenue using the IQR method and applies a log transform.
-* **Statistical summary**: Computes basic descriptive statistics and key insights (highest grossing movie, most common genre).
-* **Visualizations**:
+You can find the interactive `.html` files in the `visualizations/` folder after running the script. Open them in your web browser to explore!
 
-  1. IMDb rating trends over decades (`rating_trend.png`)
-  2. Top 10 genres by frequency (`genre_popularity.png`)
-  3. Feature correlation heatmap (`correlation.png`)
-  4. Top 10 directors by movie count (`top_directors.png`)
+### 1. ✨ Average IMDb Rating Through the Decades
+> See how the average rating of top-tier movies has evolved over time.
 
-## Requirements
+### 2. 🎭 Top 10 Most Frequent Genres
+> Discover which genres dominate the IMDb Top 1000 list.
+
+### 3. 🔍 Correlation Between Key Movie Metrics
+> Answer questions like, "Do longer movies get better ratings?".
+
+### 4. 🏆 Top 10 Most Prolific Directors
+> Celebrate the directors who appear most frequently in the Top 1000.
+
+### 5. 💰 IMDb Rating vs. Gross Revenue
+> Explore the link between critical acclaim and commercial success. Hover over any bubble to see the movie's title!
+
+## ✅ Requirements
 
 * Python 3.8 or higher
 * Packages listed in `requirements.txt`:
+    * `pandas`
+    * `plotly`
+    * `numpy`
 
-  ```text
-  numpy
-  pandas
-  matplotlib
-  seaborn
-  ```
+## 🔧 Setup
 
-## Setup
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/not-right-now/IMDB-data-analysis.git](https://github.com/not-right-now/IMDB-data-analysis.git)
+    cd IMDB-data-analysis
+    ```
 
-1. **Clone the repository**
+2.  **Create & activate a virtual environment** (recommended)
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate    # On Windows: .venv\Scripts\activate
+    ```
 
-   ```bash
-   git clone https://github.com/not-right-now/IMDB-data-analysis.git
-   cd IMDB-data-analysis
-   ```
+3.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-2. **Create & activate a virtual environment** (recommended)
+4.  **Place the CSV file**
+    Ensure `imdb_top_1000.csv` resides in the `data/` folder.
 
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate    # On Windows: .venv\Scripts\activate
-   ```
+## 🚀 Usage
 
-3. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Place the CSV file**
-   Ensure `imdb_top_1000.csv` resides in the `data/` folder. If you store it elsewhere, you’ll be prompted to enter its path when running the script.
-
-## Usage
-
-Run the analysis script with optional arguments:
+Run the analysis script from your terminal.
 
 ```bash
-python IMDB_data_analysis.py \
-  --csv data/imdb_top_1000.csv \
-  --out visualizations
+python IMDB_data_analysis.py
 ```
 
-* `--csv`: Path to the IMDb CSV file (default: `data/imdb_top_1000.csv`).
-* `--out`: Directory where plots will be saved (default: `visualizations`).
+You can also specify custom paths:
+```bash
+python IMDB_data_analysis.py --csv path/to/your.csv --out path/to/save
+```
+The default CSV path is `data/imdb_top_1000.csv` and the default output folder is `visualizations/`.
 
-During execution, the script will:
+## 📈 Output
 
-1. Validate the CSV path.
-2. Load and clean the data.
-3. Compute summary statistics.
-4. Generate and save plots to the specified output folder.
+* Five interactive **HTML files** in the `visualizations/` directory.
+* Console logs detailing the script's progress and key insights.
 
-## Output
+## 🤝 Contributing
 
-After successful execution, you will find:
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. Feel free to open an issue or submit a pull request!
 
-* Four PNG charts in the `visualizations/` directory.
-* Console logs detailing progress, statistics, and insights.
+## 📜 License
 
-## Contributing
-
-Feel free to open issues or PRs to:
-
-* Add new visualizations (e.g., rating distributions, actor networks).
-* Export results as CSV, Excel, or interactive HTML.
-* Improve performance or add unit tests.
-
-## License
-
-This project is released under the MIT License. See [LICENSE](LICENSE) for details.
-
+This project is released under the MIT License.
