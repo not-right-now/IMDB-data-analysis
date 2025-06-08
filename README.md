@@ -58,7 +58,7 @@ You can find the interactive `.html` files in the `visualizations/` folder after
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/not-right-now/IMDB-data-analysis.git](https://github.com/not-right-now/IMDB-data-analysis.git)
+    git clone https://github.com/not-right-now/IMDB-data-analysis.git
     cd IMDB-data-analysis
     ```
 
