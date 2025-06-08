@@ -101,4 +101,4 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## 📜 License
 
-This project is released under the MIT License.
+This project is released under the [MIT License](LICENSE)
